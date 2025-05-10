@@ -44,7 +44,7 @@ Il vous rappellera les enregistrements à créer chez votre registrar, puis vér
 
 Ajoutez chez votre registrar (OVH, Gandi, etc.) :
 
-Un enregistrement A pour le domaine principal (ex: mondomaine.com) vers l'IP de votre VPS
+Un enregistrement A & AAAA pour le domaine principal (ex: mondomaine.com) vers l'IP de votre VPS
 
 Un enregistrement CNAME pour www vers votre domaine principal
 
@@ -52,10 +52,14 @@ Un enregistrement A wildcard (*.mondomaine.com) vers l'IP de votre VPS (pour mul
 Entrez le domaine principal (ex: mondomaine.com) : mondomaine.com
 Entrez l'adresse IP de votre VPS : 192.0.2.10
 Vérification automatique de la propagation DNS pour mondomaine.com et *.mondomaine.com...
-✅ mondomaine.com pointe bien vers 192.0.2.10.
-Test du wildcard avec le sous-domaine test.mondomaine.com...
-✅ test.mondomaine.com pointe bien vers 192.0.2.10.
-La propagation DNS est confirmée pour mondomaine.com et test.mondomaine.com.
+
+# Sortie :
+# ✅ A pour mondomaine.com pointe vers 92.184.123.123
+# ✅ AAAA pour mondomaine.com pointe vers 2001:db8::1
+# ✅ A pour test.mondomaine.com pointe vers 92.184.123.123
+# ✅ AAAA pour test.mondomaine.com pointe vers 2001:db8::1
+# === Tous les enregistrements DNS sont valides ===
+
 
 Fonctionnalités ajoutées :
 Support IPv6 : Vérifie les enregistrements AAAA si une IPv6 est fournie
@@ -66,14 +70,8 @@ Détection automatique : Regex unique pour IPv4 (192.168.1.1) et IPv6 (2001:db8:
 
 Sortie claire : Indique le type d'enregistrement vérifié (A/AAAA) et l'état de chaque check
 
-chmod +x dns-check.sh
-./dns-check.sh
 
-# Sortie :
-# ✅ A pour mondomaine.com pointe vers 92.184.123.123
-# ✅ AAAA pour mondomaine.com pointe vers 2001:db8::1
-# ✅ A pour test.mondomaine.com pointe vers 92.184.123.123
-# ✅ AAAA pour test.mondomaine.com pointe vers 2001:db8::1
-# === Tous les enregistrements DNS sont valides ===
+
+
 
 
