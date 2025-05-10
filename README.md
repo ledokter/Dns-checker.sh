@@ -5,7 +5,7 @@
 Ce script Bash interactif vérifie la bonne configuration et la propagation DNS pour un domaine principal et son wildcard, étape essentielle avant le déploiement d’un site multisite ou d’une infrastructure web avancée.
 
 Il guide l’utilisateur pour :
-- Créer les enregistrements DNS nécessaires chez le registrar (A,AAAA, CNAME, wildcard A & AAAA)
+- Créer les enregistrements DNS nécessaires chez le registrar (A, AAAA, CNAME, wildcard A & AAAA)
 - Saisir le domaine et l’adresse IP cible
 - Vérifier automatiquement, via des requêtes DNS, que le domaine principal et un sous-domaine wildcard pointent bien vers l’IP attendue
 
