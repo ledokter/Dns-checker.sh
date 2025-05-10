@@ -57,3 +57,23 @@ Test du wildcard avec le sous-domaine test.mondomaine.com...
 ✅ test.mondomaine.com pointe bien vers 192.0.2.10.
 La propagation DNS est confirmée pour mondomaine.com et test.mondomaine.com.
 
+Fonctionnalités ajoutées :
+Support IPv6 : Vérifie les enregistrements AAAA si une IPv6 est fournie
+
+Gestion des wildcards : Contrôle à la fois les enregistrements A et AAAA pour les sous-domaines
+
+Détection automatique : Regex unique pour IPv4 (192.168.1.1) et IPv6 (2001:db8::1)
+
+Sortie claire : Indique le type d'enregistrement vérifié (A/AAAA) et l'état de chaque check
+
+chmod +x dns-check.sh
+./dns-check.sh
+
+# Sortie :
+# ✅ A pour mondomaine.com pointe vers 92.184.123.123
+# ✅ AAAA pour mondomaine.com pointe vers 2001:db8::1
+# ✅ A pour test.mondomaine.com pointe vers 92.184.123.123
+# ✅ AAAA pour test.mondomaine.com pointe vers 2001:db8::1
+# === Tous les enregistrements DNS sont valides ===
+
+
